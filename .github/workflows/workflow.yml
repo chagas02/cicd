@@ -1,0 +1,19 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request: 
+    branches: [main]
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: action/checkout@v3
+      
+      - name: executando docker
+        run: docker run docker/whalesay cowsay
+        
+  
